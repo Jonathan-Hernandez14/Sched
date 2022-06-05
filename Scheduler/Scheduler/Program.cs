@@ -1,3 +1,5 @@
+using Scheduler.Forms;
+
 namespace Scheduler
 {
     internal static class Program
@@ -5,13 +7,22 @@ namespace Scheduler
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
+        /// 
+        static Mutex mutex = new Mutex(true, "MUTEX_SINGLEINSTANCE");
+
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            if (mutex.WaitOne(TimeSpan.Zero, true))
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MainForm());
+            }
+            else
+            {
+                MessageBox.Show("Only one instance of the program is allowed");
+            }
         }
     }
 }
