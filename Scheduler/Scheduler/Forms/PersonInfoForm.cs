@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Scheduler.Common;
+using Scheduler.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,26 @@ namespace Scheduler.Forms
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(firstNameTB.Text))
+            {
+                MessageBox.Show("Por favor ingrese el primer nombre del publicador");
+            }
+            else if (string.IsNullOrEmpty(lastNameTB.Text))
+            {
+                MessageBox.Show("Por favor ingrese el apellido del publicador");
+            }
+            else
+            {
+                Person personToAdd = new Person(firstNameTB.Text, lastNameTB.Text);
+
+                DataBase.Instance.peopleDataBase.Add(personToAdd);
+                Close();
+            }
+
         }
     }
 }

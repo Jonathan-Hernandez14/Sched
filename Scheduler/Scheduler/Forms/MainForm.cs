@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Scheduler.Common;
+using Scheduler.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,7 @@ namespace Scheduler.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            DbOperations.GenOrRead();
         }
 
         private void button3_Click(object sender, EventArgs e)
