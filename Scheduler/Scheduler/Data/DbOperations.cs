@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Scheduler.Data
 {
-    public static class DbOperations
+    public class DbOperations
     {
         public static void GenOrRead()
         {
