@@ -1,4 +1,5 @@
 Scheduler/.vs/*
 Scheduler/Scheduler/bin/*
 Scheduler/Scheduler/obj/*
-
+Scheduler/.DS_Store
+.DS_Store
