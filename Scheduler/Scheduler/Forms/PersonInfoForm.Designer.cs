@@ -141,7 +141,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.BackColor = System.Drawing.Color.IndianRed;
+            this.cancelButton.BackColor = System.Drawing.SystemColors.Control;
             this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cancelButton.Location = new System.Drawing.Point(582, 3);
             this.cancelButton.Name = "cancelButton";

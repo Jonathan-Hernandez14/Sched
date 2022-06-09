@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.MainFormTLP = new System.Windows.Forms.TableLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.assignmentsButton = new System.Windows.Forms.Button();
             this.AddPersonButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.viewListButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,9 +43,9 @@
             this.MainFormTLP.ColumnCount = 2;
             this.MainFormTLP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.MainFormTLP.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.MainFormTLP.Controls.Add(this.button3, 0, 2);
+            this.MainFormTLP.Controls.Add(this.assignmentsButton, 0, 2);
             this.MainFormTLP.Controls.Add(this.AddPersonButton, 0, 0);
-            this.MainFormTLP.Controls.Add(this.button2, 0, 1);
+            this.MainFormTLP.Controls.Add(this.viewListButton, 0, 1);
             this.MainFormTLP.Controls.Add(this.label1, 1, 0);
             this.MainFormTLP.Controls.Add(this.label2, 1, 1);
             this.MainFormTLP.Controls.Add(this.label3, 1, 2);
@@ -59,16 +59,16 @@
             this.MainFormTLP.TabIndex = 0;
             this.MainFormTLP.Paint += new System.Windows.Forms.PaintEventHandler(this.MainFormTLP_Paint);
             // 
-            // button3
+            // assignmentsButton
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(19, 320);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 75);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Generar Asignaciones";
-            this.button3.UseVisualStyleBackColor = true;
+            this.assignmentsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.assignmentsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.assignmentsButton.Location = new System.Drawing.Point(19, 320);
+            this.assignmentsButton.Name = "assignmentsButton";
+            this.assignmentsButton.Size = new System.Drawing.Size(150, 75);
+            this.assignmentsButton.TabIndex = 4;
+            this.assignmentsButton.Text = "Generar Asignaciones";
+            this.assignmentsButton.UseVisualStyleBackColor = true;
             // 
             // AddPersonButton
             // 
@@ -82,16 +82,17 @@
             this.AddPersonButton.UseVisualStyleBackColor = true;
             this.AddPersonButton.Click += new System.EventHandler(this.AddPersonButton_Click);
             // 
-            // button2
+            // viewListButton
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(19, 178);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 75);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Ver Lista";
-            this.button2.UseVisualStyleBackColor = true;
+            this.viewListButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.viewListButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.viewListButton.Location = new System.Drawing.Point(19, 178);
+            this.viewListButton.Name = "viewListButton";
+            this.viewListButton.Size = new System.Drawing.Size(150, 75);
+            this.viewListButton.TabIndex = 3;
+            this.viewListButton.Text = "Ver Lista";
+            this.viewListButton.UseVisualStyleBackColor = true;
+            this.viewListButton.Click += new System.EventHandler(this.viewListButton_Click);
             // 
             // label1
             // 
@@ -145,8 +146,8 @@
 
         private TableLayoutPanel MainFormTLP;
         private Button AddPersonButton;
-        private Button button3;
-        private Button button2;
+        private Button assignmentsButton;
+        private Button viewListButton;
         private Label label1;
         private Label label2;
         private Label label3;

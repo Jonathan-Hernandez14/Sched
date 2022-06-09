@@ -24,11 +24,6 @@ namespace Scheduler.Forms
             DbOperations.GenOrRead();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainFormTLP_Paint(object sender, PaintEventArgs e)
         {
 
@@ -39,5 +34,12 @@ namespace Scheduler.Forms
             PersonInfoForm addPersonForm = new PersonInfoForm();
             addPersonForm.ShowDialog();
         }
+
+        private void viewListButton_Click(object sender, EventArgs e)
+        {
+            PeopleListForm peopleListForm = new PeopleListForm();
+            peopleListForm.ShowDialog();
+        }
+
     }
 }
