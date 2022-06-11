@@ -1,4 +1,5 @@
-﻿using Scheduler.Common;
+﻿using Newtonsoft.Json;
+using Scheduler.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +26,11 @@ namespace Scheduler.Data
                     while (line != null)
                     {
                         //make json object
-                        //*Person readPerson = readJson(line);
+                        Person readPerson = JsonConvert.DeserializeObject<Person>(line);
                         //add to masterlist
                         //*Crud.addToMasterList(line);
                         //add to DB binding source
-                        //*peopleDataBase.Add(readPerson);
+                        DataBase.Instance.peopleDataBase.Add(readPerson);
                         //move to next object
                         line = sr.ReadLine();
                     }

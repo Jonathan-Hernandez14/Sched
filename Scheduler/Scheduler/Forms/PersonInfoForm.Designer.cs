@@ -39,10 +39,10 @@
             this.addButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.isMale = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.adult = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -183,24 +183,24 @@
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.radioButton1);
+            this.flowLayoutPanel3.Controls.Add(this.isMale);
             this.flowLayoutPanel3.Controls.Add(this.radioButton2);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(87, 322);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(237, 36);
             this.flowLayoutPanel3.TabIndex = 1;
             // 
-            // radioButton1
+            // isMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(98, 29);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Hombre";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.isMale.AutoSize = true;
+            this.isMale.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.isMale.Location = new System.Drawing.Point(3, 3);
+            this.isMale.Name = "isMale";
+            this.isMale.Size = new System.Drawing.Size(98, 29);
+            this.isMale.TabIndex = 0;
+            this.isMale.TabStop = true;
+            this.isMale.Text = "Hombre";
+            this.isMale.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -216,24 +216,24 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.radioButton3);
+            this.flowLayoutPanel4.Controls.Add(this.adult);
             this.flowLayoutPanel4.Controls.Add(this.radioButton4);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(87, 364);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(177, 35);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
-            // radioButton3
+            // adult
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton3.Location = new System.Drawing.Point(3, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(45, 29);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Si";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.adult.AutoSize = true;
+            this.adult.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.adult.Location = new System.Drawing.Point(3, 3);
+            this.adult.Name = "adult";
+            this.adult.Size = new System.Drawing.Size(45, 29);
+            this.adult.TabIndex = 0;
+            this.adult.TabStop = true;
+            this.adult.Text = "Si";
+            this.adult.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
@@ -446,11 +446,11 @@
         private Button cancelButton;
         private Button addButton;
         private TableLayoutPanel tableLayoutPanel2;
-        private RadioButton radioButton1;
+        private RadioButton isMale;
         private FlowLayoutPanel flowLayoutPanel3;
         private RadioButton radioButton2;
         private FlowLayoutPanel flowLayoutPanel4;
-        private RadioButton radioButton3;
+        private RadioButton adult;
         private RadioButton radioButton4;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel3;

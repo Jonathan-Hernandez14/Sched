@@ -38,10 +38,10 @@
             this.removeButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.firstNameTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lastNameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.SatEveningCB = new System.Windows.Forms.CheckBox();
@@ -58,11 +58,11 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.adultYesRB = new System.Windows.Forms.RadioButton();
+            this.adultNoRB = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.maleRB = new System.Windows.Forms.RadioButton();
+            this.femaleRB = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peopleListGridView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -106,6 +106,7 @@
             this.peopleListGridView.RowTemplate.Height = 25;
             this.peopleListGridView.Size = new System.Drawing.Size(503, 506);
             this.peopleListGridView.TabIndex = 0;
+            this.peopleListGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.peopleListGridView_CellClick);
             // 
             // tableLayoutPanel2
             // 
@@ -190,7 +191,7 @@
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.textBox1);
+            this.flowLayoutPanel3.Controls.Add(this.firstNameTB);
             this.flowLayoutPanel3.Controls.Add(this.label1);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -198,13 +199,13 @@
             this.flowLayoutPanel3.Size = new System.Drawing.Size(501, 52);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
-            // textBox1
+            // firstNameTB
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(298, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 29);
-            this.textBox1.TabIndex = 0;
+            this.firstNameTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameTB.Location = new System.Drawing.Point(298, 3);
+            this.firstNameTB.Name = "firstNameTB";
+            this.firstNameTB.Size = new System.Drawing.Size(200, 29);
+            this.firstNameTB.TabIndex = 0;
             // 
             // label1
             // 
@@ -218,7 +219,7 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.textBox2);
+            this.flowLayoutPanel4.Controls.Add(this.lastNameTB);
             this.flowLayoutPanel4.Controls.Add(this.label2);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 61);
@@ -226,13 +227,13 @@
             this.flowLayoutPanel4.Size = new System.Drawing.Size(501, 52);
             this.flowLayoutPanel4.TabIndex = 1;
             // 
-            // textBox2
+            // lastNameTB
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(298, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 29);
-            this.textBox2.TabIndex = 0;
+            this.lastNameTB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameTB.Location = new System.Drawing.Point(298, 3);
+            this.lastNameTB.Name = "lastNameTB";
+            this.lastNameTB.Size = new System.Drawing.Size(200, 29);
+            this.lastNameTB.TabIndex = 0;
             // 
             // label2
             // 
@@ -416,8 +417,8 @@
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.Controls.Add(this.label3);
-            this.flowLayoutPanel5.Controls.Add(this.radioButton1);
-            this.flowLayoutPanel5.Controls.Add(this.radioButton2);
+            this.flowLayoutPanel5.Controls.Add(this.adultYesRB);
+            this.flowLayoutPanel5.Controls.Add(this.adultNoRB);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(213, 64);
@@ -433,63 +434,62 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Adulto :";
             // 
-            // radioButton1
+            // adultYesRB
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.Location = new System.Drawing.Point(95, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 34);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Si";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.adultYesRB.AutoSize = true;
+            this.adultYesRB.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.adultYesRB.Location = new System.Drawing.Point(95, 3);
+            this.adultYesRB.Name = "adultYesRB";
+            this.adultYesRB.Size = new System.Drawing.Size(47, 34);
+            this.adultYesRB.TabIndex = 1;
+            this.adultYesRB.TabStop = true;
+            this.adultYesRB.Text = "Si";
+            this.adultYesRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // adultNoRB
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(148, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 34);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.adultNoRB.AutoSize = true;
+            this.adultNoRB.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.adultNoRB.Location = new System.Drawing.Point(148, 3);
+            this.adultNoRB.Name = "adultNoRB";
+            this.adultNoRB.Size = new System.Drawing.Size(59, 34);
+            this.adultNoRB.TabIndex = 2;
+            this.adultNoRB.TabStop = true;
+            this.adultNoRB.Text = "No";
+            this.adultNoRB.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel6
             // 
-            this.flowLayoutPanel6.Controls.Add(this.radioButton3);
-            this.flowLayoutPanel6.Controls.Add(this.radioButton4);
+            this.flowLayoutPanel6.Controls.Add(this.maleRB);
+            this.flowLayoutPanel6.Controls.Add(this.femaleRB);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(222, 3);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(278, 64);
             this.flowLayoutPanel6.TabIndex = 5;
             // 
-            // radioButton3
+            // maleRB
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton3.Location = new System.Drawing.Point(3, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(106, 34);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Hombre";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.maleRB.AutoSize = true;
+            this.maleRB.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maleRB.Location = new System.Drawing.Point(3, 3);
+            this.maleRB.Name = "maleRB";
+            this.maleRB.Size = new System.Drawing.Size(106, 34);
+            this.maleRB.TabIndex = 4;
+            this.maleRB.TabStop = true;
+            this.maleRB.Text = "Hombre";
+            this.maleRB.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // femaleRB
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton4.Location = new System.Drawing.Point(115, 3);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(85, 34);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Mujer";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.femaleRB.AutoSize = true;
+            this.femaleRB.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.femaleRB.Location = new System.Drawing.Point(115, 3);
+            this.femaleRB.Name = "femaleRB";
+            this.femaleRB.Size = new System.Drawing.Size(85, 34);
+            this.femaleRB.TabIndex = 5;
+            this.femaleRB.TabStop = true;
+            this.femaleRB.Text = "Mujer";
+            this.femaleRB.UseVisualStyleBackColor = true;
             // 
             // PeopleListForm
             // 
@@ -534,10 +534,10 @@
         private TableLayoutPanel tableLayoutPanel3;
         private FlowLayoutPanel flowLayoutPanel3;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox firstNameTB;
         private FlowLayoutPanel flowLayoutPanel4;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox lastNameTB;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label7;
         private Label label8;
@@ -553,10 +553,10 @@
         private TableLayoutPanel tableLayoutPanel5;
         private FlowLayoutPanel flowLayoutPanel5;
         private Label label3;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton adultYesRB;
+        private RadioButton adultNoRB;
         private FlowLayoutPanel flowLayoutPanel6;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
+        private RadioButton maleRB;
+        private RadioButton femaleRB;
     }
 }

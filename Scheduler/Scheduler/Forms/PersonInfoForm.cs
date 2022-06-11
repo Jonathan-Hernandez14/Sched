@@ -1,4 +1,5 @@
-﻿using Scheduler.Common;
+﻿using Newtonsoft.Json;
+using Scheduler.Common;
 using Scheduler.Data;
 using System;
 using System.Collections.Generic;
@@ -36,9 +37,25 @@ namespace Scheduler.Forms
             }
             else
             {
-                Person personToAdd = new Person(firstNameTB.Text, lastNameTB.Text);
+                // Add Person to our db
+                Person personToAdd = new Person(
+                    firstNameTB.Text
+                    , lastNameTB.Text
+                    , isMale.Checked
+                    , adult.Checked
+                    , SatMorning.Checked
+                    , SatAfternoon.Checked
+                    , SatEvening.Checked
+                    , SunMorning.Checked
+                    , SunAfternoon.Checked
+                    , SunEvening.Checked
+                    );
+
+                string json = JsonConvert.SerializeObject(personToAdd);
 
                 DataBase.Instance.peopleDataBase.Add(personToAdd);
+                File.AppendAllText(Global.masterDBPath, json + Environment.NewLine);
+
                 Close();
             }
 
