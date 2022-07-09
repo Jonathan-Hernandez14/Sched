@@ -51,10 +51,7 @@ namespace Scheduler.Forms
                     , SunEvening.Checked
                     );
 
-                string json = JsonConvert.SerializeObject(personToAdd);
-
-                DataBase.Instance.peopleDataBase.Add(personToAdd);
-                File.AppendAllText(Global.masterDBPath, json + Environment.NewLine);
+                DbOperations.AddPerson(personToAdd);
 
                 Close();
             }

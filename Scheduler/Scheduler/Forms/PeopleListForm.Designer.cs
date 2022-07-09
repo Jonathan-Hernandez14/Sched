@@ -153,6 +153,7 @@
             this.editButton.TabIndex = 1;
             this.editButton.Text = "Editar";
             this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -172,6 +173,7 @@
             this.removeButton.TabIndex = 0;
             this.removeButton.Text = "Remover";
             this.removeButton.UseVisualStyleBackColor = false;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // tableLayoutPanel3
             // 

@@ -10,6 +10,10 @@ namespace Scheduler.Data
 {
     public class DbOperations
     {
+        /// <summary>
+        /// Upon startup, look for DB text document and load information from that document.
+        /// Otherwise just create the text file at specified location.
+        /// </summary>
         public static void GenOrRead()
         {
             string line;
@@ -56,6 +60,57 @@ namespace Scheduler.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Adding a person to the program will add to the binding source as well as the DB text
+        /// </summary>
+        /// <param name="personToAdd"></param>
+        public static void AddPerson(Person personToAdd)
+        {
+            // add to binding source
+            DataBase.Instance.peopleDataBase.Add(personToAdd);
+
+            // add to DB text file
+            string json = JsonConvert.SerializeObject(personToAdd);
+            File.AppendAllText(Global.masterDBPath, json + Environment.NewLine);
+        }
+
+        /// <summary>
+        /// Removing a person from the Binding source
+        /// </summary>
+        /// <param name="personToRemove"></param>
+        public static void RemovePerson(Person personToRemove)
+        {
+            //Remove from Binding Source
+            DataBase.Instance.peopleDataBase.Remove(personToRemove);
+            //Remove from elsewhere
+        }
+
+        /// <summary>
+        /// Changes made to a persons info will trigger a replacement on person object in the binding source
+        /// </summary>
+        /// <param name="personToUpdate"></param>
+        /// <param name="bindingSourceIndex"></param>
+        public static void UpdatePerson(Person updatedPerson, int bindingSourceIndex)
+        {
+            DataBase.Instance.peopleDataBase[bindingSourceIndex] = updatedPerson;
+        }
+
+        /// <summary>
+        /// Replaces the Master DB text file with the current state of the Binding source
+        /// </summary>
+        public static void UpdateDB()
+        {
+            var peopleList = DataBase.Instance.peopleDataBase.List;
+            File.Create(Global.masterDBPath).Close();
+            foreach (Person person in peopleList)
+            {
+                string json = JsonConvert.SerializeObject(person);
+                File.AppendAllText(Global.masterDBPath, json + Environment.NewLine);
+            }
+        }
+
+        
 
         private static void peopleDataBase_BindingComplete(object sender, BindingCompleteEventArgs e)
         {
