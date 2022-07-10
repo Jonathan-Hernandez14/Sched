@@ -41,5 +41,10 @@ namespace Scheduler.Forms
             peopleListForm.ShowDialog();
         }
 
+        private void assignmentsButton_Click(object sender, EventArgs e)
+        {
+            GenerateListForm generateListForm = new GenerateListForm();
+            generateListForm.ShowDialog();
+        }
     }
 }

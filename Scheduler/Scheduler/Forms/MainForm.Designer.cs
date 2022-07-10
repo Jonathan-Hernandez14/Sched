@@ -69,6 +69,7 @@
             this.assignmentsButton.TabIndex = 4;
             this.assignmentsButton.Text = "Generar Asignaciones";
             this.assignmentsButton.UseVisualStyleBackColor = true;
+            this.assignmentsButton.Click += new System.EventHandler(this.assignmentsButton_Click);
             // 
             // AddPersonButton
             // 
