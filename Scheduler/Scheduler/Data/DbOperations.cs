@@ -61,6 +61,48 @@ namespace Scheduler.Data
             }
         }
 
+        public static void GenerateCombos()
+        {
+            throw new NotImplementedException();
+        }
+
+        /*
+       public static void SortDbPeopleByDay()
+       {
+           foreach(Person person in DataBase.Instance.peopleDataBase)
+           {
+               CategorizePerson(person);
+           }
+       }
+
+       public static void CategorizePerson(Person person)
+       {
+           if (person.SaturdayMorning)
+           {
+               DataBase.Instance.SatMorning.Add(person);
+           }
+           if (person.SaturdayAfternoon)
+           {
+               DataBase.Instance.SatAfternoon.Add(person);
+           }
+           if (person.SaturdayEvening)
+           {
+               DataBase.Instance.SatEvening.Add(person);
+           }
+           if (person.SundayMorning)
+           {
+               DataBase.Instance.SunMorning.Add(person);
+           }
+           if (person.SundayAfternoon)
+           {
+               DataBase.Instance.SunAfternoon.Add(person);
+           }
+           if (person.SundayEvening)
+           {
+               DataBase.Instance.SunEvening.Add(person);
+           }
+       }
+*/
         /// <summary>
         /// Adding a person to the program will add to the binding source as well as the DB text
         /// </summary>

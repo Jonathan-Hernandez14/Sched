@@ -46,7 +46,7 @@
             this.MonthsCombo = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
+            this.GenButton = new System.Windows.Forms.Button();
             this.week5DatesFLP = new System.Windows.Forms.FlowLayoutPanel();
             this.week5TB1 = new System.Windows.Forms.TextBox();
             this.week5TB2 = new System.Windows.Forms.TextBox();
@@ -307,7 +307,7 @@
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.Controls.Add(this.cancelButton);
-            this.flowLayoutPanel7.Controls.Add(this.addButton);
+            this.flowLayoutPanel7.Controls.Add(this.GenButton);
             this.flowLayoutPanel7.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel7.Location = new System.Drawing.Point(272, 397);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
@@ -326,16 +326,17 @@
             this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // addButton
+            // GenButton
             // 
-            this.addButton.BackColor = System.Drawing.Color.YellowGreen;
-            this.addButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addButton.Location = new System.Drawing.Point(428, 3);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(135, 65);
-            this.addButton.TabIndex = 2;
-            this.addButton.Text = "Generar";
-            this.addButton.UseVisualStyleBackColor = false;
+            this.GenButton.BackColor = System.Drawing.Color.YellowGreen;
+            this.GenButton.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GenButton.Location = new System.Drawing.Point(428, 3);
+            this.GenButton.Name = "GenButton";
+            this.GenButton.Size = new System.Drawing.Size(135, 65);
+            this.GenButton.TabIndex = 2;
+            this.GenButton.Text = "Generar";
+            this.GenButton.UseVisualStyleBackColor = false;
+            this.GenButton.Click += new System.EventHandler(this.GenButton_Click);
             // 
             // week5DatesFLP
             // 
@@ -869,7 +870,7 @@
         private FlowLayoutPanel flowLayoutPanel4;
         private FlowLayoutPanel flowLayoutPanel7;
         private Button cancelButton;
-        private Button addButton;
+        private Button GenButton;
         private ComboBox MonthsCombo;
         private FlowLayoutPanel week1LabelFLP;
         private Label label4;

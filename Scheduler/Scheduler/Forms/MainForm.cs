@@ -22,6 +22,7 @@ namespace Scheduler.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             DbOperations.GenOrRead();
+            //DbOperations.SortDbPeopleByDay();
         }
 
         private void MainFormTLP_Paint(object sender, PaintEventArgs e)

@@ -52,6 +52,7 @@ namespace Scheduler.Forms
                     );
 
                 DbOperations.AddPerson(personToAdd);
+                //DbOperations.CategorizePerson(personToAdd);
 
                 Close();
             }

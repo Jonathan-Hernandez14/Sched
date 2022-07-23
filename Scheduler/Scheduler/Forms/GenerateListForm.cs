@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Scheduler.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,12 +34,20 @@ namespace Scheduler.Forms
             WeekCombo.SelectedIndex = 3;
             DaysCombo.SelectedIndex = 0;
         }
-
+        private void GenButton_Click(object sender, EventArgs e)
+        {
+            DbOperations.GenerateCombos();
+        }
         private void cancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Hide and show specific days in date selection table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DaysCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             int daysShown = (int)DaysCombo.SelectedItem;
@@ -108,6 +117,11 @@ namespace Scheduler.Forms
             }
         }
 
+        /// <summary>
+        /// Hide and show selected weeks for generation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WeekCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -303,8 +317,8 @@ namespace Scheduler.Forms
             week4TB7.Visible = false;
             week5TB7.Visible = false;
         }
-        #endregion
 
+        #endregion
 
     }
 }
